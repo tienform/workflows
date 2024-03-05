@@ -3,10 +3,9 @@
   "id": "",
   "displayName": "",
   "title": "nf-core/viralrecon pipeline parameters",
-  "workflowVersion": "main",
+  "workflowVersion": "",
   "categories": [],
   "description": "Assembly and intrahost/low-frequency variant calling for viral samples",
-  "config": {"mainScript": "main.nf"},
   "inputs": {
     "input": {
       "title": "",
@@ -50,12 +49,42 @@
         }
       ]
     },
+    "outdir": {
+      "title": "",
+      "required": true,
+      "description": "The output directory where the results will be saved. You have to use absolute paths to storage on Cloud infrastructure.",
+      "type": "string",
+      "default": "{{formbio.params.output}}"
+    },
     "genome": {
       "title": "",
       "required": false,
       "description": "Name of viral reference genome.",
       "help_text": "You can find the keys to specify the genomes in the [Genomes config file](https://github.com/nf-core/configs/blob/master/conf/pipeline/viralrecon/genomes.config).",
-      "type": "string"
+      "type": "string",
+      "format": "enum",
+      "enum": [
+        {
+          "id": "NC_045512.2",
+          "name": "NC_045512.2"
+        },
+        {
+          "id": "MN908947.3",
+          "name": "MN908947.3"
+        },
+        {
+          "id": "NC_063383.1",
+          "name": "NC_063383.1"
+        },
+        {
+          "id": "ON563414.3",
+          "name": "ON563414.3"
+        },
+        {
+          "id": "MT903344.1",
+          "name": "MT903344.1"
+        }
+      ]
     },
     "fasta": {
       "title": "",
@@ -908,16 +937,6 @@
           "skip_plasmidid",
           "skip_assembly_quast",
           "skip_assembly"
-        ]
-      },
-      {
-        "id": "max_job_request_options",
-        "title": "Max job request options",
-        "description": "Set the top limit for requested resources for any single job.",
-        "fields": [
-          "max_cpus",
-          "max_memory",
-          "max_time"
         ]
       }
     ]
