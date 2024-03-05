@@ -3,9 +3,10 @@
   "id": "",
   "displayName": "",
   "title": "nf-core/viralrecon pipeline parameters",
-  "workflowVersion": "",
+  "workflowVersion": "main",
   "categories": [],
   "description": "Assembly and intrahost/low-frequency variant calling for viral samples",
+  "config": {"mainScript": "main.nf"},
   "inputs": {
     "input": {
       "title": "",
